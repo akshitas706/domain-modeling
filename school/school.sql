@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS enrollments;
 
 CREATE TABLE students (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  student_id INTEGER,
   first_name TEXT,
   last_name TEXT,
   email TEXT,
@@ -31,8 +32,13 @@ CREATE TABLE courses (
 CREATE TABLE sections (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   time TEXT,
-  course_id TEXT,
-  teacher_id TEXT
+  course_id INTEGER,
+  teacher_id INTEGER
 );
 
-
+CREATE TABLE enrollments (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+course_id INTEGER,
+section_id INTEGER,
+studend_id INTEGER
+);
